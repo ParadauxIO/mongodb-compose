@@ -1,12 +1,12 @@
-version: '3.8'
+version: '3'
 services:
     database:
         image: 'mongo'
         container_name: 'my-mongo-container'
-        envoirnment:
+        environment:
             - MONGO_INITDB_DATABASE=db_name
             - MONGO_INITDB_ROOT_USERNAME=container_root_username
-            - MONGO_INITDB_ROOT_PASSWRD=container_root_password
+            - MONGO_INITDB_ROOT_PASSWORD=container_root_password
         volumes:
             - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
             - ./mongo-volume:/data/db
